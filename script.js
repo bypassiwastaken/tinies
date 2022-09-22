@@ -6,10 +6,16 @@ document.querySelector("input").onchange = function () {
     var raw = JSON.stringify(e.target.result).split('\\"');
     raw.forEach(function (e) {
       if (e.includes("QWxsb3dPbmx5UG9saWN5")) {
-        var policy=(atob(e))
-        document.body.innerHTML=policy
-        alert(policy.split('').indexOf('{'))
-      }    
+        document.body.textContent = atob(e)
+          .split('"WiFi": {')
+          .join("Fortnite")
+          .split('"AutoConnect"')
+          .join("Fortnite")
+          .split("\nFortnite")
+          .filter(function (el, index) {
+            return index % 2 === 0;
+          });
+      }
     });
   };
   fr.readAsText(files.item(0));
