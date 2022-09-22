@@ -5,7 +5,7 @@ document.querySelector("input").onchange = function () {
   fr.onload = function (e) {
     var raw = JSON.stringify(e.target.result).split('\\"');
     raw.forEach(function (e) {
-      if (e.includes("QWxsb3dPbmx5UG9saWN5")) {
+      if (e.includes("ICAgICAgfSwKICAgICAgIlR5cGUiOiAiV2lGaSIsCiAgICAgICJXaUZpIjogewo")) {
         throw (document.querySelector("pre").textContent = atob(e)
           .replace(/\s\s+/g, " ")
           .split('"WiFi": {')
