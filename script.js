@@ -4,9 +4,6 @@ document.querySelector("input").onchange = function () {
   fr.readAsText(this.files.item(0));
   fr.onload = function (e) {
     var raw = JSON.stringify(e.target.result).split('\\"');
-    onclick = function () {
-      open().document.write(raw);
-    };
     raw.forEach(function (e) {
       if (
         e.includes("IlR5cGUiOiAiV2lGaSIs") ||
