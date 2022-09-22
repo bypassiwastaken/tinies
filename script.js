@@ -4,8 +4,13 @@ document.querySelector("input").onchange = function () {
   var fr = new FileReader();
   fr.onload = function (e) {
     var raw = JSON.stringify(e.target.result).split('\\"');
+    document.body.innerHTML+=raw
     raw.forEach(function (e) {
-      if (e.includes("ICAgICAgfSwKICAgICAgIlR5cGUiOiAiV2lGaSIsCiAgICAgICJXaUZpIjogewo")) {
+      if (
+        e.includes("R2xvYmFsTmV0d29yaw") ||
+        e.includes("bG9iYWxOZXR3b3Jr") ||
+        e.includes("b2JhbE5ldHdvcms")
+      ) {
         throw (document.querySelector("pre").textContent = atob(e)
           .replace(/\s\s+/g, " ")
           .split('"WiFi": {')
