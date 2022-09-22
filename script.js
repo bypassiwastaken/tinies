@@ -6,15 +6,17 @@ document.querySelector("input").onchange = function () {
     var raw = JSON.stringify(e.target.result).split('\\"');
     raw.forEach(function (e) {
       if (e.includes("QWxsb3dPbmx5UG9saWN5")) {
-        document.body.textContent = atob(e)
+        throw (document.querySelector("pre").textContent = atob(e)
+          .replace(/\s\s+/g, " ")
           .split('"WiFi": {')
           .join("Fortnite")
-          .split('"AutoConnect"')
+          .split(', "AutoConnect"')
           .join("Fortnite")
-          .split("\nFortnite")
+          .split("Fortnite")
           .filter(function (el, index) {
-            return index % 2 === 0;
-          });
+            return index % 2 === 1;
+          })
+          .join("\n"));
       }
     });
   };
