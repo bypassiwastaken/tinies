@@ -3,16 +3,14 @@ document.querySelector("input").onchange = function () {
   if (files.length < 1) return;
   var fr = new FileReader();
   fr.onload = function (e) {
-    var raw = JSON.stringify(e.target.result).split('"');
-    alert(Date.now())
-    var i=0
+    var raw = JSON.stringify(e.target.result).split('\\"');
     raw.forEach(function (e) {
-      i++
       if (e.includes("QWxsb3dPbmx5UG9saWN5")) {
-        alert(e)
+        var policy=(atob(e))
+        document.body.innerHTML=policy
+        alert(policy.split('').indexOf('{'))
       }    
     });
-    alert(Date.now())
   };
   fr.readAsText(files.item(0));
 };
