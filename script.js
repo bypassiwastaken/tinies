@@ -27,7 +27,7 @@ document.querySelector("input").onchange = function () {
           }));
       }
       pre.textContent =
-        "no passwords were found, make sure you have a DeviceOpenNetworkConfiguration in chrome://policy";
+        "no passwords were found; make sure you were importing the right file and have a DeviceOpenNetworkConfiguration in chrome://policy";
     });
   };
 };
