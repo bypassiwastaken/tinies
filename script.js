@@ -1,3 +1,4 @@
+var pre = document.querySelector("pre");
 document.querySelector("input").onchange = function () {
   if (this.length < 1) return;
   var fr = new FileReader();
@@ -10,7 +11,7 @@ document.querySelector("input").onchange = function () {
         e.includes("VHlwZSI6ICJXaUZpIiw") ||
         e.includes("eXBlIjogIldpRmkiLA")
       ) {
-        throw (document.querySelector("pre").textContent = atob(e)
+        throw (pre.textContent = atob(e)
           .replace(/\s\s+/g, " ")
           .split('"WiFi": {')
           .join("youtu.be/dQw4w9WgXcQ")
@@ -25,6 +26,8 @@ document.querySelector("input").onchange = function () {
             return String.fromCharCode(parseInt(b, 16));
           }));
       }
+      pre.textContent =
+        "no passwords were found, make sure you have a DeviceOpenNetworkConfiguration in chrome://policy";
     });
   };
 };
