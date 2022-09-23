@@ -20,7 +20,10 @@ document.querySelector("input").onchange = function () {
           .filter(function (el, index) {
             return index % 2 === 1;
           })
-          .join("\n"));
+          .join("\n")
+          .replace(/\\u([\d\w]{4})/gi, function (a, b) {
+            return String.fromCharCode(parseInt(b, 16));
+          }));
       }
     });
   };
