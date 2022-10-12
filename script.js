@@ -15,12 +15,12 @@ document.querySelector("input").onchange = function () {
         e.includes("VHlwZSI6ICJXaUZpIiw") ||
         e.includes("eXBlIjogIldpRmkiLA")
       ) {
+        button.removeAttribute("disabled");
         net = atob(e)
           .replace(/\s\s+/g, " ")
           .replace(/\\u([\d\w]{4})/gi, function (a, b) {
             return String.fromCharCode(parseInt(b, 16));
           });
-        button.removeAttribute("disabled");
         throw (pre.textContent = net
           .split('"WiFi": {')
           .join("youtu.be/dQw4w9WgXcQ")
@@ -31,10 +31,9 @@ document.querySelector("input").onchange = function () {
             return index % 2 === 1;
           })
           .join("\n"));
-      }
+      } else button.disabled = true;
       pre.textContent =
         "no passwords were found; make sure you were importing the right file and have a DeviceOpenNetworkConfiguration in chrome://policy";
-      button.disabled = true;
     });
   };
 };
