@@ -20,7 +20,8 @@ document.querySelector("input").onchange = function () {
           .replace(/\s\s+/g, " ")
           .replace(/\\u([\d\w]{4})/gi, function (a, b) {
             return String.fromCharCode(parseInt(b, 16));
-          });
+          })
+          .replace(/\\\\/g, "\\");
         throw (pre.textContent = net
           .split('"WiFi": {')
           .join("youtu.be/dQw4w9WgXcQ")
