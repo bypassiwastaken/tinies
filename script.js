@@ -25,7 +25,7 @@ document.querySelector("input").onchange = function () {
         throw (pre.textContent = net
           .split('"WiFi": {')
           .join("youtu.be/dQw4w9WgXcQ")
-          .split(', "AutoConnect"')
+          .split('"AutoConnect"')
           .join("youtu.be/dQw4w9WgXcQ")
           .split("youtu.be/dQw4w9WgXcQ")
           .filter(function (el, index) {
