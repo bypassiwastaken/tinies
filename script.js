@@ -1,8 +1,6 @@
 var net;
 var button = document.querySelector("button");
 var pre = document.querySelector("pre");
-pre.textContent =
-  "upload your chrome://net-export file that was active while reloading chrome policies";
 document.querySelector("input").onchange = function () {
   if (this.length < 1) return;
   var fr = new FileReader();
