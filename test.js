@@ -1,12 +1,20 @@
 var input = document.querySelector("input");
 var pre = document.querySelector("pre");
 function magic() {
-  pre.textContent = "now go to chrome://sync-internals and" + input.value;
+  if (!input.value) {
+    alert("no");
+  } else if (!input.value.startsWith("{")) {
+    pre.textContent =
+      'now go to the "search" tab in chrome://sync-internals and search for ' +
+      hex(input.value);
+  }
 }
-function hex(e) {
-  return e
-    .split("")
-    .map((c) => c.charCodeAt(0).toString(16).padStart(2, "0"))
-    .join("")
-    .toUpperCase() + "<||>psk";
+function hex(wifi) {
+  return (
+    wifi
+      .split("")
+      .map((c) => c.charCodeAt(0).toString(16).padStart(2, "0"))
+      .join("")
+      .toUpperCase() + "<||>psk"
+  );
 }
