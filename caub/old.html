@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>chrome automatic update blocker (old version)</title>
+    <script src="/old.js" defer></script>
+  </head>
+  <body style="white-space: pre-wrap; font-family: monospace">
+<h1>chrome automatic update blocker - website made by Bypassi#7037</h1>
+<h1>only works on chrome 85 or higher</h1>
+<hr>
+this method (originally found by Catakang#0987) will help you keep your chromebook downgraded (or on the current version) without automatic updates screwing you over
+
+using onc files, you can convince your chromebook that the wifi that you're connected to is pay-to-use (like a hotspot using data), and thus it will not check for updates
+
+<b>i cannot guarantee that this will work on every wifi</b>
+
+<hr>
+<b>to start:</b>
+
+- go to chrome://network#state (on your school chromebook of course; if this is blocked then ur kinda screwed lol)
+
+- scroll to the bottom of the page; you should see a list of "favorite" wifis that you've connected to in the past
+
+<b>repeat the following steps for each network that you commonly connect your chromebook to: (yes, this works for managed school wifis too)</b>
+
+- click the + sign next to the wifi name
+
+- copy all the data that appears
+
+- go back to this page (caub.glitch.me)
+
+- using the menu below, create textboxes and paste data for one network in each box 
+
+- press the "generate onc" button below the textboxes
+
+<hr /><input placeholder="read instructions!" /><button onclick="add(this)">+</button><button onclick="subtract()">-</button>
+
+<button onclick="gen()"><b>generate and download onc file</b></button><hr />
+- once you have downloaded the file, go to chrome://network#general
+
+- click on the "import onc" button
+
+- import the newly downloaded file
+
+<b>your chromebook will no longer automatically update (as long as you are on a wifi that you used caub on)
+  
+be careful not to stay on a wifi for too long without using caub on it</b>
+    
+<hr>
+<b>bonus:</b>
+
+if you did caub on a school wifi that is forced by policy, you may be able to view its password by doing the steps below:
+    
+- go to chrome://sync-internals on the chromebook
+
+- click "trigger getupdates"; the number of synced wifi configurations should go up
+
+- follow the steps at the <a href="https://sipe.glitch.me">sync internals password extractor</a> page
+
+you may also be able to change the dns of the wifi from settings, but don't expect it to connect</body>
+</html>
